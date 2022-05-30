@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Install tox and any other packages
-        run: pip3 install tox
-      - name: Run tox
-        # Run tox using the version of Python in `PATH`
-        run: tox -e py
+        run: pip3 install pytest
+      - name: Run Pytest
+        # Run pytest using the version of Python in `PATH`
+        run: pytest

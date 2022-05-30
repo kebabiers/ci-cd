@@ -13,12 +13,12 @@ class Device(BaseModel):
     deviceType: str
 
 
-@app.post("/add")
+@app.post("/devices")
 async def add_device(device: Device):
     return device
 
 
-@app.delete("/delete/{id}")
+@app.delete("/devices/{id}")
 async def delete_device(id: int):
     return id
 
@@ -28,6 +28,6 @@ async def get_devices(id: int):
     return id
 
 
-@app.put("/update/{id}")
+@app.put("/devices/{id}")
 async def update_device(device: Device):
     return device
