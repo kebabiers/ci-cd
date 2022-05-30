@@ -1,6 +1,6 @@
 # main.py
 
-#from typing import Optional
+# from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -11,6 +11,7 @@ class Device(BaseModel):
     deviceID: int
     deviceName: str
     deviceType: str
+
 
 @app.post("/add")
 async def add_device(device: Device):
