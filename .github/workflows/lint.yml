@@ -30,3 +30,4 @@ jobs:
           black: true
           flake8: true
           black_auto_fix: true
+          max-line-length: 160

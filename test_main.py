@@ -9,7 +9,7 @@ client = TestClient(main.app)
 
 def test_add():
     r = client.post(
-        "/devices", json={"deviceID": 0, "deviceName": "Thomas", "deviceType": "Nuleuh"}    
+        "/devices", json={"deviceID": 0, "deviceName": "Thomas", "deviceType": "Nuleuh"}
     )
 
     print(r.json())
@@ -39,7 +39,3 @@ def test_update():
     print(r.json())
     assert r.status_code == 200
     assert r.json() == {"deviceID": 10, "deviceName": "Thomas", "deviceType": "Nule"}
-
-
-# test_add()
-# test_delete()
