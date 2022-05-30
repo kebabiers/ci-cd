@@ -16,7 +16,9 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python }}
-      - name: Install tox and any other packages
+      - name: Install fastapi pliz
+        run: pip3 install "fastapi[all]"
+      - name: Install pytest and any other packages
         run: pip3 install pytest
       - name: Run Pytest
         # Run pytest using the version of Python in `PATH`
