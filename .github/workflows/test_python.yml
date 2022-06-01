@@ -1,0 +1,25 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.8"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install fastapi pliz
+        run: pip3 install "fastapi[all]"
+      - name: Install pytest and any other packages
+        run: pip3 install pytest
+      - name: Run Pytest
+        # Run pytest using the version of Python in `PATH`
+        run: pytest
