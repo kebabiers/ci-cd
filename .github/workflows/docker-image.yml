@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag latune:$(date +%s)
     - name: Log into Docker
-      run: docker login -u dnis73 -p ${{secrets.PASSWORD}}
+      run: docker login -u dnis73 -p ${{secrets.PASSWORD}} 
     - name: Push into Docker hub
       run: docker push dnis73/latune:latest
 
